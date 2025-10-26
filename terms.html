@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - UK Gambling Insights</title>
+
+    <style>
+        :root {
+            --color-primary-dark: #1a2b4f;
+            --color-primary-light: #f0f6ff;
+            --color-accent-blue: #2563eb;
+            --color-accent-blue-hover: #1d4ed8;
+            --color-white: #ffffff;
+            --color-text-dark: #111827;
+            --color-text-light: #6b7280;
+            --color-border-light: #e5e7eb;
+            --color-bg-grey: #f9fafb;
+            --color-stars: #f59e0b;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 1. ОБЩИЕ СТИЛИ */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text-dark);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        a {
+            color: var(--color-accent-blue);
+            text-decoration: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .site-main {
+            flex: 1;
+        }
+
+        /* 2. ХЕДЕР (ШАПКА) */
+        .site-header {
+            background-color: var(--color-primary-dark);
+            padding: 15px 0;
+        }
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-white);
+            border: 2px solid var(--color-accent-blue);
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+        }
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        .main-nav li {
+            margin-left: 10px;
+        }
+        .main-nav a {
+            display: block;
+            color: var(--color-white);
+            background-color: var(--color-accent-blue);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .main-nav a.active,
+        .main-nav a:hover {
+            background-color: var(--color-primary-dark);
+            box-shadow: inset 0 0 0 2px var(--color-accent-blue);
+        }
+
+        /* 8. АДАПТИВНОСТЬ (MEDIA QUERIES) - С ГЛАВНОЙ */
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+                text-align: left;
+            }
+            .main-nav {
+                display: block;
+            }
+        }
+        @media (max-width: 767px) {
+            .main-nav ul {
+                flex-direction: column;
+                gap: 5px;
+                width: 100%;
+            }
+            .main-nav li { margin-left: 0; }
+            .site-header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* ======================================
+         9. СТИЛИ ДЛЯ ТЕКСТОВЫХ СТРАНИЦ 
+         ======================================
+        */
+        .text-content-section {
+            background-color: var(--color-white);
+            padding: 40px 0;
+            text-align: left;
+        }
+
+        .text-content-section .container {
+            max-width: 900px;
+        }
+
+        .text-content-section h2 {
+            font-size: 1.8rem;
+            color: var(--color-text-dark);
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 25px;
+        }
+
+        .content-box {
+            background-color: var(--color-bg-grey);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--border-radius);
+            padding: 25px 30px;
+            margin-bottom: 25px;
+        }
+
+        .content-box p {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .content-box ul {
+            list-style-position: inside;
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        .content-box li {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .content-box h3 {
+            font-size: 1.1rem;
+            color: var(--color-text-dark);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .content-box a {
+            font-weight: 600;
+        }
+
+        .site-footer {
+            background-color: var(--color-primary-dark);
+            color: #bdc3c7;
+            padding: 40px 0;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        .footer-grid h4 {
+            color: var(--color-white);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .footer-grid a {
+            color: var(--color-white);
+        }
+        .footer-grid a:hover {
+            text-decoration: underline;
+        }
+        .footer-logos {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #34495e;
+        }
+        .footer-logo-placeholder {
+            color: #9ab;
+            border: 1px solid #567;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        .content-box-simple {
+            padding: 10px 0;
+            margin-bottom: 15px;
+        }
+        .content-box-simple p,
+        .content-box-simple ul,
+        .content-box-simple li {
+            color: var(--color-text-light);
+            font-size: 1rem;
+        }
+        .content-box-simple ul {
+            list-style-position: inside;
+            padding-left: 10px;
+            margin-top: 15px;
+        }
+        .content-box-simple li {
+            margin-bottom: 10px;
+        }
+
+        /* ======================================
+           10. СТИЛИ ДЛЯ COOKIE БАННЕРА 
+           ======================================
+        */
+        .cookie-consent-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+            background-color: var(--color-white);
+            border: 1px solid var(--color-border-light);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 25px;
+            z-index: 1000;
+            display: none;
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+        }
+
+        .cookie-consent-banner p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .cookie-consent-banner a {
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cookie-btn {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cookie-btn-accept {
+            background-color: var(--color-accent-blue);
+            color: var(--color-white);
+        }
+        .cookie-btn-accept:hover {
+            background-color: var(--color-accent-blue-hover);
+        }
+
+        .cookie-btn-reject {
+            background-color: var(--color-bg-grey);
+            color: var(--color-text-dark);
+            border: 1px solid var(--color-border-light);
+        }
+        .cookie-btn-reject:hover {
+            background-color: #e5e7eb;
+        }
+
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <a href="index.html" class="logo">BET Safezone</a>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="responsible-gaming.html">Responsible Gaming</a></li>
+                <li><a href="terms.html" class="active">Terms Of Service</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="site-main">
+
+    <section class="text-content-section">
+        <div class="container">
+
+            <h2>1. Acceptance Of Terms</h2>
+            <div class="content-box">
+                <p>
+                    By accessing and using UKCasinoPortal ("The Website"), you accept and agree to be bound by the terms and provision of this agreement. If you do
+                    not agree to abide by the above, please do not use this service.
+                </p>
+                <p>
+                    These Terms of Service ("Terms") govern your use of our website operated by UKCasinoPortal ("we", "us", or "our"). These Terms apply to all
+                    visitors, users, and others who access or use the service.
+                </p>
+            </div>
+
+            <h2>2. Use License</h2>
+            <div class="content-box">
+                <p>
+                    Permission is granted to temporarily download one copy of the materials on UKCasinoPortal for personal, non-commercial transitory viewing only.
+                    This is the grant of a license, not a transfer of title, and under this license you may not:
+                </p>
+                <ul>
+                    <li>Modify or copy the materials</li>
+                    <li>Use the materials for any commercial purpose or for any public display</li>
+                    <li>Attempt to reverse engineer any software contained on the website</li>
+                    <li>Remove any copyright or other proprietary notations from the materials</li>
+                </ul>
+                <p>This license may be terminated by us at any time and may be terminated by us at any time if you fail to comply with these restrictions.</p>
+            </div>
+
+            <h2>3. User Accounts</h2>
+            <div class="content-box">
+                <p>
+                    When you create an account with us, you must provide information that is accurate, complete, and current at all times. You are responsible for
+                    safeguarding the password and for maintaining the confidentiality of your account.
+                </p>
+                <p>
+                    You agree not to disclose your password to any third party and to take sole responsibility for activities that occur under your account.
+                </p>
+            </div>
+
+            <h2>4. Prohibited Uses</h2>
+            <div class="content-box-simple"> <p>You may not use our service:</p>
+                <ul>
+                    <li>For any unlawful purpose or to solicit others to perform unlawful acts</li>
+                    <li>To violate any international, federal, provincial, or state regulations, rules, laws, or local ordinances</li>
+                    <li>To infringe upon or violate our intellectual property rights or the intellectual property rights of others</li>
+                    <li>To harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate</li>
+                    <li>To submit false or misleading information</li>
+                    <li>To upload or transmit viruses or any other type of malicious code</li>
+                    <li>To collect or track the personal information of others</li>
+                    <li>To spam, phish, pharm, pretext, spider, crawl, or scrape</li>
+                    <li>For any obscene or immoral purpose</li>
+                    <li>To interfere with or circumvent the security features of the service</li>
+                </ul>
+            </div>
+
+            <h2>5. Content</h2>
+            <div class="content-box-simple"> <p>
+                Our service allows you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material
+                ("Content"). You are responsible for the Content that you post to the service, including its legality, reliability, and appropriateness.
+            </p>
+                <p>
+                    By posting Content to the service, you grant us the right and license to use, modify, publicly perform, publicly display, reproduce, and distribute
+                    such Content on and through the service.
+                </p>
+            </div>
+
+            <h2>6. Gambling And Age Restrictions</h2>
+            <div class="content-box">
+                <p>Our website provides information about online casinos and gambling services. By using our service, you confirm that:</p>
+                <ul>
+                    <li>You are at least 18 years old (or the legal gambling age in your jurisdiction)</li>
+                    <li>Gambling is legal in your jurisdiction</li>
+                    <li>You understand the risks associated with gambling</li>
+                    <li>You will gamble responsibly</li>
+                </ul>
+                <p>
+                    We do not provide gambling services directly. We are an information and review website only. Any gambling activities you engage in are at your
+                    own risk and responsibility.
+                </p>
+            </div>
+
+            <h2>7. Disclaimers</h2>
+            <div class="content-box">
+                <p>The information on this website is provided on an "as is" basis. To the fullest extent permitted by law, this Company:</p>
+                <ul>
+                    <li>Excludes all representations and warranties relating to this website and its contents</li>
+                    <li>Excludes all liability for damages arising out of or in connection with your use of this website</li>
+                    <li>Does not guarantee the accuracy, completeness, or timeliness of the information provided</li>
+                    <li>Makes no warranties about the availability or functionality of the website</li>
+                </ul>
+            </div>
+
+            <h2>8. Limitation Of Liability</h2>
+            <div class="content-box-simple"> <p>
+                In no event shall UKCasinoPortal, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special,
+                consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your
+                use of the service.
+            </p>
+            </div>
+
+            <h2>9. Termination</h2>
+            <div class="content-box">
+                <p>
+                    We may terminate or suspend your account and bar access to the service immediately, without prior notice or liability, under our sole discretion,
+                    for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.
+                </p>
+                <p>If you wish to terminate your account, you may simply discontinue using the service.</p>
+            </div>
+
+            <h2>10. Governing Law</h2>
+            <div class="content-box">
+                <p>
+                    These Terms shall be interpreted and governed by the laws of the United Kingdom, without regard to its conflict of law provisions. Our failure to
+                    enforce any right or provision of these Terms will not be considered a waiver of those rights.
+                </p>
+            </div>
+
+            <h2>11. Changes To Terms</h2>
+            <div class="content-box">
+                <p>
+                    We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days
+                    notice prior to any new terms taking effect.
+                </p>
+                <p>
+                    What constitutes a material change will be determined at our sole discretion. By continuing to access or use our service after any revisions
+                    become effective, you agree to be bound by the revised terms.
+                </p>
+            </div>
+
+            <h2>12. Contact Information</h2>
+            <div class="content-box">
+                <p>
+                    If you have any questions about these Terms of Service, please contact us:
+                    <br>Email: legal@ukcasinoportal.com
+                </p>
+            </div>
+
+            <h2>13. Severability</h2>
+            <div class="content-box">
+                <p>
+                    If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives
+                    of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
+                </p>
+            </div>
+
+            <h2>14. Entire Agreement</h2>
+            <div class="content-box">
+                <p>
+                    These Terms of Service, together with our Privacy Policy, constitute the sole and entire agreement between you and UKCasinoPortal regarding the
+                    website and supersede all prior and contemporaneous understandings, agreements, representations, and warranties.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Our Office</h4>
+                <p>
+                    WAFFLE ADVERTISING LTD<br>
+                    85 Great Portland Street<br>
+                    London, W1W 7LT, United Kingdom
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Gambling Awareness & Support</h4>
+                <p>
+                    <a href="responsible-gaming.html">Responsible Gambling & Help</a><br>
+                    <a href="#">Gambling Info & Support</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Advertising Information for 18+</h4>
+                <p>
+                    This material is for informational purposes
+                    only and is intended for individuals over 18
+                    years of age.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-logos">
+            <span class="footer-logo-placeholder">UKGC Logo</span>
+            <span class="footer-logo-placeholder">GamCare</span>
+            <span class="footer-logo-placeholder">TAKE TIME TO THINK</span>
+            <span class="footer-logo-placeholder">Safer Gambling Week</span>
+        </div>
+
+        <p class="copyright">
+            © 2025 All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<div id="cookie-banner" class="cookie-consent-banner">
+    <p>
+        We use cookies to enhance your browsing experience. By
+        continuing to use this site, you agree to our use of cookies.
+        For more details, please see our
+        <a href="cookies.html" target="_blank">Cookie Policy</a>.
+    </p>
+    <div class="cookie-buttons">
+        <button id="cookie-reject" class="cookie-btn cookie-btn-reject">Reject</button>
+        <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Accept</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var banner = document.getElementById("cookie-banner");
+        var acceptBtn = document.getElementById("cookie-accept");
+        var rejectBtn = document.getElementById("cookie-reject");
+        var consent = localStorage.getItem("cookie_consent");
+        if (!consent) {
+            banner.style.display = "block";
+        }
+        acceptBtn.addEventListener("click", function() {
+            localStorage.setItem("cookie_consent", "accepted");
+            banner.style.display = "none";
+        });
+        rejectBtn.addEventListener("click", function() {
+            localStorage.setItem("cookie_consent", "rejected");
+            banner.style.display = "none";
+        });
+    });
+</script>
+
+</body>
+</html>

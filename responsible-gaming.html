@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsible Gaming - UK Gambling Insights</title>
+
+    <style>
+        :root {
+            --color-primary-dark: #1a2b4f;
+            --color-primary-light: #f0f6ff;
+            --color-accent-blue: #2563eb;
+            --color-accent-blue-hover: #1d4ed8;
+            --color-white: #ffffff;
+            --color-text-dark: #111827;
+            --color-text-light: #6b7280;
+            --color-border-light: #e5e7eb;
+            --color-bg-grey: #f9fafb;
+            --color-stars: #f59e0b;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 1. ОБЩИЕ СТИЛИ */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text-dark);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        a {
+            color: var(--color-accent-blue);
+            text-decoration: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .site-main {
+            flex: 1;
+        }
+
+        /* 2. ХЕДЕР (ШАПКА) */
+        .site-header {
+            background-color: var(--color-primary-dark);
+            padding: 15px 0;
+        }
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-white);
+            border: 2px solid var(--color-accent-blue);
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+        }
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        .main-nav li {
+            margin-left: 10px;
+        }
+        .main-nav a {
+            display: block;
+            color: var(--color-white);
+            background-color: var(--color-accent-blue);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .main-nav a.active,
+        .main-nav a:hover {
+            background-color: var(--color-primary-dark);
+            box-shadow: inset 0 0 0 2px var(--color-accent-blue);
+        }
+
+        /* 7. ФУТЕР (ПОДВАЛ) - С ГЛАВНОЙ */
+        .site-footer {
+            background-color: var(--color-primary-dark);
+            color: #bdc3c7;
+            padding: 40px 0;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        .footer-grid h4 {
+            color: var(--color-white);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .footer-grid a {
+            color: var(--color-white);
+        }
+        .footer-grid a:hover {
+            text-decoration: underline;
+        }
+        .footer-logos {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #34495e;
+        }
+        .footer-logo-placeholder {
+            color: #9ab;
+            border: 1px solid #567;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        /* 8. АДАПТИВНОСТЬ (MEDIA QUERIES) - С ГЛАВНОЙ */
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+                text-align: left;
+            }
+            .main-nav {
+                display: block;
+            }
+        }
+        @media (max-width: 767px) {
+            .main-nav ul {
+                flex-direction: column;
+                gap: 5px;
+                width: 100%;
+            }
+            .main-nav li { margin-left: 0; }
+            .site-header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* ======================================
+         9. НОВЫЕ СТИЛИ ДЛЯ ТЕКСТОВЫХ СТРАНИЦ 
+         ======================================
+        */
+        .text-content-section {
+            background-color: var(--color-white);
+            padding: 40px 0;
+            text-align: left;
+        }
+
+        .text-content-section .container {
+            max-width: 900px;
+        }
+
+        .text-content-section h1 {
+            font-size: 2.5rem;
+            color: var(--color-text-dark);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .text-content-section h2 {
+            font-size: 1.8rem;
+            color: var(--color-text-dark);
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 25px;
+        }
+
+        .content-box {
+            background-color: var(--color-bg-grey);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--border-radius);
+            padding: 25px 30px;
+            margin-bottom: 25px;
+        }
+
+        .content-box p {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .content-box ul {
+            list-style-position: inside;
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        .content-box li {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .content-box h3 {
+            font-size: 1.1rem;
+            color: var(--color-text-dark);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .content-box a {
+            font-weight: 600;
+        }
+
+        /* ======================================
+           10. СТИЛИ ДЛЯ COOKIE БАННЕРА 
+           ======================================
+        */
+        .cookie-consent-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+            background-color: var(--color-white);
+            border: 1px solid var(--color-border-light);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 25px;
+            z-index: 1000;
+            display: none;
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+        }
+
+        .cookie-consent-banner p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .cookie-consent-banner a {
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cookie-btn {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cookie-btn-accept {
+            background-color: var(--color-accent-blue);
+            color: var(--color-white);
+        }
+        .cookie-btn-accept:hover {
+            background-color: var(--color-accent-blue-hover);
+        }
+
+        .cookie-btn-reject {
+            background-color: var(--color-bg-grey);
+            color: var(--color-text-dark);
+            border: 1px solid var(--color-border-light);
+        }
+        .cookie-btn-reject:hover {
+            background-color: #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <a href="index.html" class="logo">BET Safezone</a>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li
+                ><a href="responsible-gaming.html" class="active">Responsible Gaming</a>
+                </li>
+                <li><a href="terms.html">Terms Of Service</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="site-main">
+
+    <section class="text-content-section">
+        <div class="container">
+
+            <h1>Responsible Gaming</h1>
+
+            <h2>Our Commitment To Responsible Gaming</h2>
+            <div class="content-box">
+                <p>
+                    At UKCasinoPortal, we are committed to promoting responsible gaming practices. While gambling can be an enjoyable form of entertainment, we
+                    recognize that it can also lead to serious problems for some individuals. We believe that all gambling should be conducted in a safe and
+                    responsible manner.
+                </p>
+                <p>
+                    Our goal is to provide information and resources to help you make informed decisions about gambling and to recognize when gambling might be
+                    becoming a problem.
+                </p>
+            </div>
+
+            <h2>What is Responsible Gaming?</h2>
+            <div class="content-box">
+                <p>
+                    Responsible gaming means gambling in a way that is safe, within your means, and doesn't negatively impact your life or the lives of others. It
+                    involves:
+                </p>
+                <ul>
+                    <li>Setting limits on time and money spent gambling</li>
+                    <li>Only gambling with money you can afford to lose</li>
+                    <li>Never chasing losses</li>
+                    <li>Taking regular breaks from gambling</li>
+                    <li>Not gambling when upset, depressed, or under the influence</li>
+                    <li>Keeping gambling in perspective as entertainment, not a way to make money</li>
+                    <li>Being aware of the risks and signs of problem gambling</li>
+                </ul>
+            </div>
+
+            <h2>Setting Limits</h2>
+            <div class="content-box">
+                <p>
+                    One of the most important aspects of responsible gambling is setting and sticking to limits. Consider implementing the following:
+                </p>
+                <h3>Time Limits</h3>
+                <ul>
+                    <li>Decide how much time you want to spend gambling before you start</li>
+                    <li>Use alarms or reminders to help you stick to your time limits</li>
+                    <li>Take regular breaks during gambling sessions</li>
+                    <li>Don't let gambling interfere with work, family, or other responsibilities</li>
+                </ul>
+                <h3>Money Limits</h3>
+                <ul>
+                    <li>Set a budget for gambling that you can afford to lose</li>
+                    <li>Never gamble with money needed for essentials like rent, food, or bills</li>
+                    <li>Don't borrow money to gamble</li>
+                    <li>Consider using deposit limits offered by gambling sites</li>
+                    <li>Keep track of your gambling spending</li>
+                </ul>
+            </div>
+
+            <h2>Warning Signs Of Problem Gambling</h2>
+            <div class="content-box">
+                <p>If you recognize any of these signs, it may be time to seek help:</p>
+                <ul>
+                    <li>Spending more money on gambling than you can afford</li>
+                    <li>Chasing losses by gambling more</li>
+                    <li>Lying to family or friends about your gambling</li>
+                    <li>Feeling anxious, depressed, or guilty about gambling</li>
+                    <li>Neglecting work, family, or other responsibilities</li>
+                    <li>Borrowing money to gamble</li>
+                    <li>Thinking about gambling constantly</li>
+                    <li>Unable to cut back or control your gambling</li>
+                    <li>Gambling to escape problems or negative emotions</li>
+                </ul>
+            </div>
+
+            <h2>Self-Assessment Tools</h2>
+            <div class="content-box">
+                <p>If you're concerned about your gambling habits, consider taking a self-assessment. Ask yourself:</p>
+                <ul>
+                    <li>Do you gamble more than you can afford to lose?</li>
+                    <li>Do you need to gamble with increasing amounts of money to get the same excitement?</li>
+                    <li>Have you repeatedly tried to control, cut back, or stop gambling unsuccessfully?</li>
+                    <li>Do you feel restless or irritable when trying to cut down on gambling?</li>
+                    <li>Do you gamble to escape problems or relieve feelings of helplessness, guilt, anxiety, or depression?</li>
+                    <li>After losing money gambling, do you often return to try to win it back?</li>
+                    <li>Do you lie to family members or others to conceal the extent of your gambling?</li>
+                    <li>Have you jeopardized or lost a significant relationship, job, or educational opportunity because of gambling?</li>
+                    <li>Do you rely on others to provide money to relieve desperate financial situations caused by gambling?</li>
+                </ul>
+                <p>If you answered "yes" to several of these questions, you may have a gambling problem and should consider seeking help.</p>
+            </div>
+
+            <h2>Getting Help</h2>
+            <div class="content-box">
+                <p>If you or someone you know has a gambling problem, help is available. There are many resources and organizations that provide support:</p>
+                <h3>UK Support Organizations</h3>
+                <p><strong>GamCare</strong><br>
+                    Free, confidential advice and support for anyone affected by gambling problems.<br>
+                    Helpline: 0808 8020 133<br>
+                    Website: <a href="https://www.gamcare.org.uk" target="_blank" rel="noopener nofollow">www.gamcare.org.uk</a><br>
+                    Live chat: available on their website
+                </p>
+                <p><strong>Gamblers Anonymous</strong><br>
+                    A fellowship of men and women who share their experience, strength, and hope with each other.<br>
+                    Website: <a href="https://www.gamblersanonymous.org.uk" target="_blank" rel="noopener nofollow">www.gamblersanonymous.org.uk</a><br>
+                    Meetings: Available across the UK
+                </p>
+                <p><strong>Gordon Moody Association</strong><br>
+                    Provides residential treatment and support for people with gambling addictions.<br>
+                    Phone: 01384 241292<br>
+                    Website: <a href="https://www.gordonmoody.org.uk" target="_blank" rel="noopener nofollow">www.gordonmoody.org.uk</a>
+                </p>
+                <p><strong>National Problem Gambling Clinic</strong><br>
+                    NHS-funded specialist treatment for problem gambling.<br>
+                    Phone: 020 7381 7722<br>
+                    Website: <a href="https://www.cnwl.nhs.uk" target="_blank" rel="noopener nofollow">www.cnwl.nhs.uk</a>
+                </p>
+            </div>
+
+            <h2>Self-Exclusion Options</h2>
+            <div class="content-box">
+                <p>Self-exclusion is a tool that allows you to restrict your access to gambling. There are several options available:</p>
+                <p><strong>GAMSTOP</strong><br>
+                    GAMSTOP is a free service that allows you to self-exclude from all online gambling companies licensed in Great Britain. Once you sign up, you
+                    will be prevented from using gambling websites or apps run by companies licensed by the UK Gambling Commission.<br>
+                    Website: <a href="https://www.gamstop.co.uk" target="_blank" rel="noopener nofollow">www.gamstop.co.uk</a>
+                </p>
+                <p><strong>Individual Casino Self-Exclusion</strong><br>
+                    Most reputable online casinos offer self-exclusion options. You can typically set limits on:
+                </p>
+                <ul>
+                    <li>Deposit amounts</li>
+                    <li>Session time limits</li>
+                    <li>Loss limits</li>
+                    <li>Complete account closure</li>
+                </ul>
+            </div>
+
+            <h2>Tips For Family And Friends</h2>
+            <div class="content-box">
+                <p>If someone you care about has a gambling problem, here are some ways you can help:</p>
+                <ul>
+                    <li>Approach them with compassion and understanding, not judgment</li>
+                    <li>Encourage them to seek professional help</li>
+                    <li>Don't lend them money or pay their gambling debts</li>
+                    <li>Set boundaries to protect yourself and your family</li>
+                    <li>Consider seeking support for yourself through organizations like GamAnon</li>
+                    <li>Learn about gambling addiction to better understand the problem</li>
+                    <li>Be patient - recovery is a process that takes time</li>
+                </ul>
+            </div>
+
+            <h2>Underage Gambling Prevention</h2>
+            <div class="content-box">
+                <p>Gambling is illegal for anyone under 18 in the UK. We are committed to preventing underage gambling and encourage parents and guardians to:</p>
+                <ul>
+                    <li>Monitor your children's internet activity</li>
+                    <li>Use parental controls and filtering software</li>
+                    <li>Educate young people about the risks of gambling</li>
+                    <li>Be aware of the signs of problem gambling in young people</li>
+                    <li>Seek help if you suspect a young person is gambling</li>
+                </ul>
+            </div>
+
+            <h2>Our Role</h2>
+            <div class="content-box">
+                <p>As a casino review website, we take our responsibility seriously. We:</p>
+                <ul>
+                    <li>Only recommend licensed and regulated casinos</li>
+                    <li>Promote responsible gambling practices</li>
+                    <li>Provide information about gambling risks</li>
+                    <li>Include links to help and support resources</li>
+                    <li>Encourage the use of gambling tools and limits</li>
+                    <li>Do not target vulnerable individuals</li>
+                    <li>Support awareness campaigns about problem gambling</li>
+                </ul>
+            </div>
+
+            <h2>Remember</h2>
+            <div class="content-box">
+                <p>
+                    Gambling should be fun, not a way to make money or solve financial problems.
+                    If gambling is no longer enjoyable or is causing problems in your life, it's time to seek help.
+                </p>
+                <p>Remember: Help is available, and recovery is possible.</p>
+            </div>
+
+            <h2>Additional Resources</h2>
+            <div class="content-box">
+                <p>For more information about responsible gambling and problem gambling support:</p>
+                <ul>
+                    <li>BeGambleAware: <a href="https://www.begambleaware.org" target="_blank" rel="noopener nofollow">www.begambleaware.org</a></li>
+                    <li>Gambling Commission: <a href="https://www.gamblingcommission.gov.uk" target="_blank" rel="noopener nofollow">www.gamblingcommission.gov.uk</a></li>
+                    <li>Citizens Advice: <a href="https://www.citizensadvice.org.uk" target="_blank" rel="noopener nofollow">www.citizensadvice.org.uk</a></li>
+                    <li>Samaritans: 116 123 (free 24-hour helpline)</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Our Office</h4>
+                <p>
+                    WAFFLE ADVERTISING LTD<br>
+                    85 Great Portland Street<br>
+                    London, W1W 7LT, United Kingdom
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Gambling Awareness & Support</h4>
+                <p>
+                    <a href="responsible-gaming.html">Responsible Gambling & Help</a><br>
+                    <a href="#">Gambling Info & Support</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Advertising Information for 18+</h4>
+                <p>
+                    This material is for informational purposes
+                    only and is intended for individuals over 18
+                    years of age.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-logos">
+            <span class="footer-logo-placeholder">UKGC Logo</span>
+            <span class="footer-logo-placeholder">GamCare</span>
+            <span class="footer-logo-placeholder">TAKE TIME TO THINK</span>
+            <span class="footer-logo-placeholder">Safer Gambling Week</span>
+        </div>
+
+        <p class="copyright">
+            © 2025 All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<div id="cookie-banner" class="cookie-consent-banner">
+    <p>
+        We use cookies to enhance your browsing experience. By
+        continuing to use this site, you agree to our use of cookies.
+        For more details, please see our
+        <a href="cookies.html" target="_blank">Cookie Policy</a>.
+    </p>
+    <div class="cookie-buttons">
+        <button id="cookie-reject" class="cookie-btn cookie-btn-reject">Reject</button>
+        <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Accept</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var banner = document.getElementById("cookie-banner");
+        var acceptBtn = document.getElementById("cookie-accept");
+        var rejectBtn = document.getElementById("cookie-reject");
+        var consent = localStorage.getItem("cookie_consent");
+        if (!consent) {
+            banner.style.display = "block";
+        }
+        acceptBtn.addEventListener("click", function() {
+            localStorage.setItem("cookie_consent", "accepted");
+            banner.style.display = "none";
+        });
+        rejectBtn.addEventListener("click", function() {
+            localStorage.setItem("cookie_consent", "rejected");
+            banner.style.display = "none";
+        });
+    });
+</script>
+
+</body>
+</html>
